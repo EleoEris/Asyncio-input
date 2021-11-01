@@ -13,7 +13,7 @@ class something:
         check_interrupt = asyncio.create_task(self.check_interrupt())
         await check_interrupt
    
-    async def main_loop():
+    async def main_loop(self):
         while True:
             await asyncio.sleep(1)
     
