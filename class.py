@@ -1,7 +1,7 @@
 import asyncio
 from keyboard import is_pressed
 
-class something:
+class InterrupClass:
     def __init__(self, interrupt_key = 'k': str):
         self.interrupt_key = interrupt_key  # what to press to exit
         self.program_ended = False          # flag to sync the exit
