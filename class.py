@@ -4,7 +4,7 @@ from keyboard import is_pressed
 class something:
     def __init__(self, interrupt_key = 'k': str):
         self.interrupt_key = interrupt_key
-        self.interrupted = False
+        self.program_ended = False
         
     def run(self):
         asyncio.run(self.check_interrupt())
@@ -15,10 +15,10 @@ class something:
             await asyncio.sleep(.1)
             if is_pressed(self.interrupt_key):
                 main.cancel()
-                self.interrupted = True
+                self.program_ended = True
 
     async def main_loop(self):
         while True:
             pass
         
-        self.interrupted = True
+        self.program_ended = True
