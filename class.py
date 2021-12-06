@@ -12,7 +12,7 @@ class something:
     async def check_interrupt(self):        # treating this as event loop, will probably rework this later
         main = asyncio.create_task(self.main_loop())
         while not self.program_ended:
-            await asyncio.sleep(.1)         # sensitivity
+            await asyncio.sleep(.1)
             if is_pressed(self.interrupt_key):
                 self.program_ended = True
                 ### Might want to make a decontructor on the main node with an await asyncio.sleep here for timeout (in case main_loop broken)
