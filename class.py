@@ -2,7 +2,7 @@ import asyncio
 from keyboard import is_pressed
 
 class InterrupClass:
-    def __init__(self, interrupt_key = 'k': str):
+    def __init__(self, interrupt_key = 'k'):
         self.interrupt_key = interrupt_key  # what to press to exit
         self.program_ended = False          # flag to sync the exit
         
@@ -19,7 +19,7 @@ class InterrupClass:
                 main.cancel()
 
     async def main_loop(self):
-        while True:                         # actual main()
-            if self.program_ended: pass
+        while not self.program_ended:                         # actual main()
+            pass
         
         self.program_ended = True
