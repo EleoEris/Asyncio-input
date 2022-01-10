@@ -19,7 +19,7 @@ class InterrupClass:
                 main.cancel()
 
     async def main_loop(self):
-        while not self.program_ended:       # actual main()
+        while not self.program_ended:       # actual main() (probably will quit through main.cancel() in check_interrupt but this solution gives more utility)
             pass
         
         self.program_ended = True           # in case the main_loop breaks in an unforseen way
